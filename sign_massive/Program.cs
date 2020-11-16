@@ -24,7 +24,14 @@ namespace sign_massive
             Console.WriteLine();
         }
 
-        static int[] SelectDivisibleThree(int[] m)
+        static void WriteMassive(int[] m, int start, int end)
+        {
+            for(int i = start; i < end; i++)
+                Console.Write(m[i] + " ");
+            Console.WriteLine();
+        }
+
+        static int[] SelectDivisibleThree(int[] m, out int lengthMasssive)
         {
             int[] DivThree = new Int32[m.Length];
             int index = 0;
@@ -35,6 +42,7 @@ namespace sign_massive
                     //DivThree[index] = m[i];
                     //index++;
                 }
+            lengthMasssive = index;
             return DivThree;
         }
 
@@ -43,9 +51,11 @@ namespace sign_massive
             //1 ввод массива
             int[] a = ReadMassive();
             //2 обработка
-            int[] b = SelectDivisibleThree(a); 
+            int lengthB;
+            int[] b = SelectDivisibleThree(a, out lengthB);
+            Console.WriteLine(lengthB);
             //3 вывод результаты
-            WriteMassive(b);
+            WriteMassive(b, 0, lengthB);
         }
     }
 }
