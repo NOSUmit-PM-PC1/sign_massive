@@ -24,7 +24,7 @@ namespace sign_massive
             Console.WriteLine();
         }
 
-        static void WriteMassive(int[] m, int start, int end)
+        static void WriteMassive(int[] m, int end, int start = 0)
         {
             for(int i = start; i < end; i++)
                 Console.Write(m[i] + " ");
@@ -55,7 +55,7 @@ namespace sign_massive
             int[] b = SelectDivisibleThree(a, out lengthB);
             Console.WriteLine(lengthB);
             //3 вывод результаты
-            WriteMassive(b, 0, lengthB);
+            WriteMassive(b, lengthB);
         }
     }
 }
